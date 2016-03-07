@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>Noticias</display-name>
+  <welcome-file-list>
+    <welcome-file>mercado.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>Listar</display-name>
+    <servlet-name>Listar</servlet-name>
+    <servlet-class>servlets.Listar</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Listar</servlet-name>
+    <url-pattern>/Listar</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Excluir</display-name>
+    <servlet-name>Excluir</servlet-name>
+    <servlet-class>servlets.Excluir</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Excluir</servlet-name>
+    <url-pattern>/Excluir</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>incluir</display-name>
+    <servlet-name>incluir</servlet-name>
+    <servlet-class>servlets.incluir</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>incluir</servlet-name>
+    <url-pattern>/incluir</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Incluir</display-name>
+    <servlet-name>Incluir</servlet-name>
+    <servlet-class>servlets.Incluir</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Incluir</servlet-name>
+    <url-pattern>/Incluir</url-pattern>
+  </servlet-mapping>
+</web-app>
