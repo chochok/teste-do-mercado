@@ -10,7 +10,7 @@ public class Conexao {
 	
 	private Connection abrirConexao() throws SQLException {
 		try {
-			//CRIA O DRIVER DE CONEXÃO
+			//Cria o Driver de Conexão
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
 		}
 		catch(Exception e) {
@@ -19,9 +19,9 @@ public class Conexao {
 		}
 		
 		try {
-			conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "");
+			conexao = DriverManager.getConnection("jdbc:mysql://127.7.142.2:3306/testedomercado", "admin2lLiE15", "BVN-f6vggtd7");
 			
-			//RETORNA OS DADOS DA CONEXAO
+			//Retorna os Dados da Conexão
 			return conexao;
 		}
 		catch(SQLException e) {
@@ -32,9 +32,9 @@ public class Conexao {
 	
 	public void closeConexao() {
 		try {
-			//VERIFICA SE A CONEXAO ESTÁ FECHADA
-			//SE NÃO ESTIVER FECHADA, ENTÃO FECHA
-			if(! conexao.isClosed()) {
+			//Verifica se a Conexão está fechada
+			//se não estiver fechada, então fecha
+			if((conexao != null) && (! conexao.isClosed())) {
 				conexao.close();
 			}
 		}
@@ -44,8 +44,8 @@ public class Conexao {
 	}
 	
 	public Connection getConexao() throws SQLException {
-		//VERIFICA SE JÁ EXISTE UMA CONEXÃO CRIADA PARA ESTA INSTANCIA.
-		//SE NÃO EXISTIR, ABRE UMA NOVA CONEXÃO
+		//Verifica se já existe uma Conexão criada para esta instancia.
+		//se não existir, abre uma nova Conexão
 		if(conexao == null) {
 			conexao = abrirConexao();
 		}

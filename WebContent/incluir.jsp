@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -48,7 +49,9 @@ function validaCampos() {
 		return false;
 	}
 	
-	if (isNaN(document.forms[0].preco.value)){
+	charDec = ",";
+	var reDecimalPt = /^[+-]?((\d+|\d{1,3}(\.\d{3})+)(\,\d*)?|\,\d+)$/;
+	if (! reDecimalPt.test(document.forms[0].preco.value)) {
 		alert('Favor Informar o Preço apenas com números');
 		document.forms[0].preco.select();
 		return false;
@@ -91,6 +94,11 @@ function voltar(){
 		<br>
 		<br>
 		<a HREF="./mercado.jsp" > Voltar </a>
+	
 	</form>
+	
+	<c:if test="${incluiu == 'false'}">
+		<h4><center>Registro já Cadastrado</center></h4>
+	</c:if>
 </body>
 </html>
